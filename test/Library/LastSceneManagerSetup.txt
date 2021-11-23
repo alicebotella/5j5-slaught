@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/FreeOpenBuilding_1.1.2/FOB_Scene/s.unity
+- path: Assets/Scenes/Game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
