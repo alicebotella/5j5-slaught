@@ -1,0 +1,195 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.28f1 (f3f9dc10f3dd) revision 15989212'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Education; OS build 19042.1165; Version 2009; 64bit' Language: 'fr' Physical Memory: 8134 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.28f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/e1995379/Documents/GitHub/5j5-slaught/test
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64054
+Successfully changed project path to: C:/Users/e1995379/Documents/GitHub/5j5-slaught/test
+C:/Users/e1995379/Documents/GitHub/5j5-slaught/test
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 103.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.28f1 (f3f9dc10f3dd)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/e1995379/Documents/GitHub/5j5-slaught/test/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro K620 (ID=0x13bb)
+    Vendor:   NVIDIA
+    VRAM:     2007 MB
+    Driver:   23.21.13.9189
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.28f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002262 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 103.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.230 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4230ms)
+		BeginReloadAssembly (71ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (547ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (187ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (274ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (129ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006090 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\e1995379\Documents\GitHub\5j5-slaught\test\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\e1995379\Documents\GitHub\5j5-slaught\test\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 108.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.495 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1496ms)
+		BeginReloadAssembly (185ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (1242ms)
+			LoadAssemblies (175ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (440ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (464ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (109ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (242ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4368 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 170.0 MB.
+System memory in use after: 170.2 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 4816.
+Total: 4.000800 ms (FindLiveObjects: 0.455000 ms CreateObjectMapping: 0.175800 ms MarkObjects: 3.273100 ms  DeleteObjects: 0.096300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Environnement/maison.fbx
+  artifactKey: Guid(d1c088c796475634ca58c7838e52703d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/maison.fbx using Guid(d1c088c796475634ca58c7838e52703d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a4cd5f126220666cc269ae9884c74c') in 0.297190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.707956 seconds.
+  path: Assets/Environnement/maison.fbx
+  artifactKey: Guid(d1c088c796475634ca58c7838e52703d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/maison.fbx using Guid(d1c088c796475634ca58c7838e52703d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c085f5157d91d1427c1dd415b0aabf30') in 0.041071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 75.756702 seconds.
+  path: Assets/Environnement/textures 1/floor_tiles_06_diff_1k.jpg
+  artifactKey: Guid(a74677b65b6953f4caa4c271bc3d8fca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/textures 1/floor_tiles_06_diff_1k.jpg using Guid(a74677b65b6953f4caa4c271bc3d8fca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeee3a8ef6a5d30d84b96b86931344b0') in 0.039876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.441703 seconds.
+  path: Assets/Environnement/textures 1
+  artifactKey: Guid(ff2bcc485ff6a9649b5e76909239f7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/textures 1 using Guid(ff2bcc485ff6a9649b5e76909239f7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6c988c8cf44bc0c9f451af5a53c402d') in 0.011102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.744616 seconds.
+  path: Assets/Environnement/textures
+  artifactKey: Guid(265acddbda5f5b54b83e3413b02d4f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/textures using Guid(265acddbda5f5b54b83e3413b02d4f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fbcb2c8225c1094250349d3dd5f730d') in 0.011705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.618641 seconds.
+  path: Assets/Environnement/textures/mur
+  artifactKey: Guid(24286160b086ee945bef8c357115eab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/textures/mur using Guid(24286160b086ee945bef8c357115eab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03817cf73685a4908cb2940582c01f7e') in 0.011918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.050366 seconds.
+  path: Assets/Environnement/textures/floor
+  artifactKey: Guid(ff2bcc485ff6a9649b5e76909239f7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environnement/textures/floor using Guid(ff2bcc485ff6a9649b5e76909239f7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46a6c3da8c4edce1a61f90601e352a4d') in 0.010331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 323.732042 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie biting (2).fbx
+  artifactKey: Guid(73525e8932e82b54d8a040f4b432cdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie biting (2).fbx using Guid(73525e8932e82b54d8a040f4b432cdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '807d9d4eb09e72c34b1a4f1e83d04aa2') in 0.014996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.748375 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie death.fbx
+  artifactKey: Guid(c873878c327b4534696b383a1db35ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie death.fbx using Guid(c873878c327b4534696b383a1db35ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ad6af16757d54c744cffb41e6bff19') in 0.014677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.351922 seconds.
+  path: Assets/Animations/Scary Zombie Pack/zombie idle.fbx
+  artifactKey: Guid(bcf2a843cc8538941ba98d67fb9ee3a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Scary Zombie Pack/zombie idle.fbx using Guid(bcf2a843cc8538941ba98d67fb9ee3a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab653d10e6f8b37ca99b285b6375a06c') in 0.013926 seconds 
