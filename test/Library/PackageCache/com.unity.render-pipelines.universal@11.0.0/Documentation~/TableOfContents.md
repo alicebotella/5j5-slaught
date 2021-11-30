@@ -1,6 +1,5 @@
 * [Universal Render Pipeline](index.md)
 * [Requirements](requirements)
-  * [Building for Closed platforms](Building-For-Consoles.md)
 * [What's new in URP](whats-new/urp-whats-new.md)
 * [Features]()
   * [Feature Comparison with the Built-in Render Pipeline](universalrp-builtin-feature-comparison.md)
@@ -105,6 +104,8 @@
     * [2D Renderer and Shader Graph](ShaderGraph.md)
   * [2D Pixel Perfect](2d-pixelperfect.md)
     * [Cinemachine Pixel Perfect extension](pixel-cinemachine.md)
+
+* [Building for consoles](Building-For-Consoles.md)
 
 * [Frequently asked questions (FAQ)](faq.md)
 * [Known issues](known-issues.md)

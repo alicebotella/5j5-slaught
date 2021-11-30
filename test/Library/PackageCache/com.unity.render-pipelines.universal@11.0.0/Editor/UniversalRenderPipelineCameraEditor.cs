@@ -40,12 +40,11 @@ namespace UnityEditor.Rendering.Universal
             public static GUIContent allowHDR = EditorGUIUtility.TrTextContent("HDR", "High Dynamic Range gives you a wider range of light intensities, so your lighting looks more realistic. With it, you can still see details and experience less saturation even with bright light.", (Texture)null);
             public static GUIContent priority = EditorGUIUtility.TrTextContent("Priority", "A camera with a higher priority is drawn on top of a camera with a lower priority [ -100, 100 ].");
             public static GUIContent clearDepth = EditorGUIUtility.TrTextContent("Clear Depth", "If enabled, depth from the previous camera will be cleared.");
+
             public static GUIContent rendererType = EditorGUIUtility.TrTextContent("Renderer", "Controls which renderer this camera uses.");
 
-            public static GUIContent volumesSettingsText = EditorGUIUtility.TrTextContent("Volumes", "These settings define how Volumes affect this Camera.");
-            public static GUIContent volumeLayerMask = EditorGUIUtility.TrTextContent("Mask", "This Camera is only affected by Volumes in the Layers that are assigned to the Camera.");
-            public static GUIContent volumeTrigger = EditorGUIUtility.TrTextContent("Trigger", "A Transform component that acts as a trigger for Volume blending. If none is set, the Camera itself acts as a trigger.");
-            public static GUIContent volumeUpdates = EditorGUIUtility.TrTextContent("Update Mode", "Select how Unity updates Volumes: every frame or when triggered via scripting. In the Editor, Unity updates Volumes every frame when not in the Play mode.");
+            public static GUIContent volumeLayerMask = EditorGUIUtility.TrTextContent("Volume Mask", "This camera will only be affected by volumes in the selected scene-layers.");
+            public static GUIContent volumeTrigger = EditorGUIUtility.TrTextContent("Volume Trigger", "A transform that will act as a trigger for volume blending. If none is set, the camera itself will act as a trigger.");
 
             public static GUIContent renderPostProcessing = EditorGUIUtility.TrTextContent("Post Processing", "Enable this to make this camera render post-processing effects.");
             public static GUIContent antialiasing = EditorGUIUtility.TrTextContent("Anti-aliasing", "The anti-aliasing method to use.");
@@ -78,7 +77,7 @@ namespace UnityEditor.Rendering.Universal
                 new GUIContent("Uninitialized"),
             };
 
-            public static int[] cameraBackgroundValues = { 0, 1, 2 };
+            public static int[] cameraBackgroundValues = { 0, 1, 2};
 
             // Using the pipeline Settings
             public static GUIContent[] displayedCameraOptions =
@@ -100,7 +99,7 @@ namespace UnityEditor.Rendering.Universal
                 new GUIContent("Fast Approximate Anti-aliasing (FXAA)"),
                 new GUIContent("Subpixel Morphological Anti-aliasing (SMAA)"),
             };
-            public static int[] antialiasingValues = { 0, 1, 2 };
+            public static int[] antialiasingValues = { 0, 1, 2};
         }
 
         ReorderableList m_LayerList;
@@ -110,7 +109,7 @@ namespace UnityEditor.Rendering.Universal
 
         List<Camera> validCameras = new List<Camera>();
         // This is the valid list of types, so if we need to add more types we just add it here.
-        List<CameraRenderType> validCameraTypes = new List<CameraRenderType> { CameraRenderType.Overlay };
+        List<CameraRenderType> validCameraTypes = new List<CameraRenderType> {CameraRenderType.Overlay};
         List<Camera> errorCameras = new List<Camera>();
         Texture2D m_ErrorIcon;
 
@@ -140,7 +139,6 @@ namespace UnityEditor.Rendering.Universal
         SerializedProperty m_AdditionalCameraDataCameras;
         SerializedProperty m_AdditionalCameraDataVolumeLayerMask;
         SerializedProperty m_AdditionalCameraDataVolumeTrigger;
-        SerializedProperty m_AdditionalCameraDataVolumeFrameworkUpdateMode;
         SerializedProperty m_AdditionalCameraDataRenderPostProcessing;
         SerializedProperty m_AdditionalCameraDataAntialiasing;
         SerializedProperty m_AdditionalCameraDataAntialiasingQuality;
@@ -419,7 +417,6 @@ namespace UnityEditor.Rendering.Universal
             m_AdditionalCameraDataRendererProp = m_AdditionalCameraDataSO.FindProperty("m_RendererIndex");
             m_AdditionalCameraDataVolumeLayerMask = m_AdditionalCameraDataSO.FindProperty("m_VolumeLayerMask");
             m_AdditionalCameraDataVolumeTrigger = m_AdditionalCameraDataSO.FindProperty("m_VolumeTrigger");
-            m_AdditionalCameraDataVolumeFrameworkUpdateMode = m_AdditionalCameraDataSO.FindProperty("m_VolumeFrameworkUpdateModeOption");
             m_AdditionalCameraDataRenderPostProcessing = m_AdditionalCameraDataSO.FindProperty("m_RenderPostProcessing");
             m_AdditionalCameraDataAntialiasing = m_AdditionalCameraDataSO.FindProperty("m_Antialiasing");
             m_AdditionalCameraDataAntialiasingQuality = m_AdditionalCameraDataSO.FindProperty("m_AntialiasingQuality");
@@ -790,30 +787,29 @@ namespace UnityEditor.Rendering.Universal
 
         void DrawVolumes()
         {
-            // Display the Volume Update mode, LayerMask and Trigger
-            LayerMask selectedVolumeLayerMask = m_AdditionalCameraDataVolumeLayerMask.intValue;
-            Transform selectedVolumeTrigger = (Transform)m_AdditionalCameraDataVolumeTrigger.objectReferenceValue;
+            bool hasChanged = false;
+            LayerMask selectedVolumeLayerMask;
+            Transform selectedVolumeTrigger;
+            if (m_AdditionalCameraDataSO == null)
+            {
+                selectedVolumeLayerMask = 1; // "Default"
+                selectedVolumeTrigger = null;
+            }
+            else
+            {
+                selectedVolumeLayerMask = m_AdditionalCameraDataVolumeLayerMask.intValue;
+                selectedVolumeTrigger = (Transform)m_AdditionalCameraDataVolumeTrigger.objectReferenceValue;
+            }
 
-            EditorGUILayout.LabelField(Styles.volumesSettingsText, EditorStyles.boldLabel);
+            hasChanged |= DrawLayerMask(m_AdditionalCameraDataVolumeLayerMask, ref selectedVolumeLayerMask, Styles.volumeLayerMask);
+            hasChanged |= DrawObjectField(m_AdditionalCameraDataVolumeTrigger, ref selectedVolumeTrigger, Styles.volumeTrigger);
 
-            EditorGUI.indentLevel++;
-
-            EditorGUI.BeginChangeCheck();
-            DrawLayerMask(m_AdditionalCameraDataVolumeLayerMask, ref selectedVolumeLayerMask, Styles.volumeLayerMask);
-            DrawObjectField(m_AdditionalCameraDataVolumeTrigger, ref selectedVolumeTrigger, Styles.volumeTrigger);
-            EditorGUILayout.PropertyField(m_AdditionalCameraDataVolumeFrameworkUpdateMode, Styles.volumeUpdates);
-
-            if (EditorGUI.EndChangeCheck())
+            if (hasChanged)
             {
                 m_AdditionalCameraDataVolumeLayerMask.intValue = selectedVolumeLayerMask;
                 m_AdditionalCameraDataVolumeTrigger.objectReferenceValue = selectedVolumeTrigger;
-
-                VolumeFrameworkUpdateMode curVolumeUpdateMode = (VolumeFrameworkUpdateMode)m_AdditionalCameraDataVolumeFrameworkUpdateMode.intValue;
-                camera.SetVolumeFrameworkUpdateMode(curVolumeUpdateMode);
-
                 m_AdditionalCameraDataSO.ApplyModifiedProperties();
             }
-            EditorGUI.indentLevel--;
         }
 
         void DrawRenderer(UniversalRenderPipelineAsset rpAsset)
