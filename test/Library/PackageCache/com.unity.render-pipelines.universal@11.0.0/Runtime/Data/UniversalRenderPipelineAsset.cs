@@ -20,16 +20,14 @@ namespace UnityEngine.Rendering.LWRP
 
 namespace UnityEngine.Rendering.Universal
 {
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum ShadowQuality
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum ShadowQuality
     {
         Disabled,
         HardShadows,
         SoftShadows,
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum ShadowResolution
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum ShadowResolution
     {
         _256 = 256,
         _512 = 512,
@@ -38,8 +36,7 @@ namespace UnityEngine.Rendering.Universal
         _4096 = 4096
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum MsaaQuality
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum MsaaQuality
     {
         Disabled = 1,
         _2x = 2,
@@ -47,8 +44,7 @@ namespace UnityEngine.Rendering.Universal
         _8x = 8
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum Downsampling
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum Downsampling
     {
         None,
         _2xBilinear,
@@ -65,16 +61,14 @@ namespace UnityEngine.Rendering.Universal
         UnityBuiltinDefault
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum LightRenderingMode
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum LightRenderingMode
     {
         Disabled = 0,
         PerVertex = 2,
         PerPixel = 1,
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum ShaderVariantLogLevel
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum ShaderVariantLogLevel
     {
         Disabled,
         OnlyUniversalRPShaders,
@@ -88,8 +82,7 @@ namespace UnityEngine.Rendering.Universal
         Profiling,
     }
 
-    [MovedFrom("UnityEngine.Rendering.LWRP")]
-    public enum RendererType
+    [MovedFrom("UnityEngine.Rendering.LWRP")] public enum RendererType
     {
         Custom,
         ForwardRenderer,
@@ -100,19 +93,6 @@ namespace UnityEngine.Rendering.Universal
     {
         LowDynamicRange,
         HighDynamicRange
-    }
-
-    /// <summary>
-    /// Defines the update frequency for the Volume Framework.
-    /// </summary>
-    public enum VolumeFrameworkUpdateMode
-    {
-        [InspectorName("Every Frame")]
-        EveryFrame = 0,
-        [InspectorName("Via Scripting")]
-        ViaScripting = 1,
-        [InspectorName("Use Pipeline Settings")]
-        UsePipelineSettings = 2,
     }
 
     [ExcludeFromPreset]
@@ -193,7 +173,6 @@ namespace UnityEngine.Rendering.Universal
         [SerializeField] ShadowResolution m_ShadowAtlasResolution = ShadowResolution._256;
 
         [SerializeField] ShaderVariantLogLevel m_ShaderVariantLogLevel = ShaderVariantLogLevel.Disabled;
-        [SerializeField] VolumeFrameworkUpdateMode m_VolumeFrameworkUpdateMode = VolumeFrameworkUpdateMode.EveryFrame;
 
         // Note: A lut size of 16^3 is barely usable with the HDR grading mode. 32 should be the
         // minimum, the lut being encoded in log. Lower sizes would work better with an additional
@@ -726,11 +705,6 @@ namespace UnityEngine.Rendering.Universal
             get { return m_ShaderVariantLogLevel; }
             set { m_ShaderVariantLogLevel = value; }
         }
-
-        /// <summary>
-        /// Returns the selected update mode for volumes.
-        /// </summary>
-        public VolumeFrameworkUpdateMode volumeFrameworkUpdateMode => m_VolumeFrameworkUpdateMode;
 
         [Obsolete("PipelineDebugLevel is deprecated. Calling debugLevel is not necessary.", false)]
         public PipelineDebugLevel debugLevel

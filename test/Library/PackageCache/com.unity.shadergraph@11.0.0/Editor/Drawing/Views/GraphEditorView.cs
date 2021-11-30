@@ -121,7 +121,7 @@ namespace UnityEditor.ShaderGraph.Drawing
             m_Graph = graph;
             m_MessageManager = messageManager;
             previewManager = new PreviewManager(graph, messageManager);
-            previewManager.RenderPreviews(m_EditorWindow, false);
+            previewManager.RenderPreviews(false);
 
             styleSheets.Add(Resources.Load<StyleSheet>("Styles/GraphEditorView"));
 
@@ -375,7 +375,7 @@ namespace UnityEditor.ShaderGraph.Drawing
 
         void CreateMasterPreview()
         {
-            m_MasterPreviewView = new MasterPreviewView(previewManager, m_Graph) { name = "masterPreview" };
+            m_MasterPreviewView = new MasterPreviewView(previewManager, m_Graph) {name = "masterPreview"};
 
             var masterPreviewViewDraggable = new WindowDraggable(null, this);
             m_MasterPreviewView.AddManipulator(masterPreviewViewDraggable);
@@ -648,7 +648,7 @@ namespace UnityEditor.ShaderGraph.Drawing
                 m_ColorManager.UpdateNodeViews(nodeList);
             }
 
-            previewManager.RenderPreviews(m_EditorWindow);
+            previewManager.RenderPreviews();
             m_BlackboardProvider.HandleGraphChanges(wasUndoRedoPerformed);
             if (wasUndoRedoPerformed || m_InspectorView.DoesInspectorNeedUpdate())
                 m_InspectorView.Update();
@@ -902,14 +902,14 @@ namespace UnityEditor.ShaderGraph.Drawing
             }
             else if (node is RedirectNodeData redirectNodeData)
             {
-                var redirectNodeView = new RedirectNodeView { userData = redirectNodeData };
+                var redirectNodeView = new RedirectNodeView {userData = redirectNodeData};
                 m_GraphView.AddElement(redirectNodeView);
                 redirectNodeView.ConnectToData(materialNode, m_EdgeConnectorListener);
                 nodeView = redirectNodeView;
             }
             else
             {
-                var materialNodeView = new MaterialNodeView { userData = materialNode };
+                var materialNodeView = new MaterialNodeView {userData = materialNode};
                 m_GraphView.AddElement(materialNodeView);
                 materialNodeView.Initialize(materialNode, m_PreviewManager, m_EdgeConnectorListener, graphView);
                 m_ColorManager.UpdateNodeView(materialNodeView);
