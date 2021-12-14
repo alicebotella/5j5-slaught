@@ -5,12 +5,15 @@ using UnityEngine;
 public class deplacement : MonoBehaviour
 {
     public CharacterController controler;
+    public Animator animator;
     public float speed = 12f;
-
+    //float chaVelocityX;
+    //float chaVelocityZ;
     void Start()
     {
+
     }
-    // A utiliser pour detecter les touches du clavier
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -18,5 +21,8 @@ public class deplacement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controler.Move(move * speed * Time.deltaTime);
+
+        animator.SetFloat("VelocityX", x);
+        animator.SetFloat("VelocityZ", z);
     }
 }
