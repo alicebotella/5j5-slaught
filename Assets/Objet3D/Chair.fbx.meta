@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Objet3D/Chair.fbx.meta
 guid: 0033e23281449b64e879f84a52eedbfe
+=======
+guid: 7a010f458a5abaf41a2255a718c37740
+>>>>>>> main:Assets/Materials/Aspiro.fbx.meta
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
