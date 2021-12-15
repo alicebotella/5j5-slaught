@@ -189,9 +189,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Density: 0
+    - Melange: 1
     - Tilling: 17.11
     - _Float: 36
     m_Colors:
     - Vector3: {r: 18.5, g: 0, b: 18.5, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
     - centerVector: {r: 18.5, g: 0, b: 18.5, a: 0}
   m_BuildTextureStacks: []
