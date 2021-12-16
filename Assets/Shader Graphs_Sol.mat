@@ -190,7 +190,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Density: 1.47
-    - Melange: 10
+    - Melange: 15
     - Seperation: 0.278
     - Tilling: 17.11
     - _Float: 0.8
