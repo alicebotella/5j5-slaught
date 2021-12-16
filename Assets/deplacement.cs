@@ -24,5 +24,6 @@ public class deplacement : MonoBehaviour
 
         animator.SetFloat("VelocityX", x);
         animator.SetFloat("VelocityZ", z);
+
     }
 }

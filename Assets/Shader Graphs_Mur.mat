@@ -126,6 +126,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Float_1: 3.04
+    - Melange: 1
     - Tilling: 10.79
     - _Float: 17.56
     m_Colors:
